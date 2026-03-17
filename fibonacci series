@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        if (sc.hasNextLong()) {
+            long n = sc.nextLong();
+            System.out.println(sumEvenFibonacci(n));
+        }
+        
+        sc.close();
+    }
+
+    public static long sumEvenFibonacci(long n) {
+        long sum = 0;
+        long a = 0; // First Fibonacci number
+        long b = 1; // Second Fibonacci number
+
+        // Loop until the current Fibonacci number exceeds N
+        while (a <= n) {
+            // Check if the current term is even
+            if (a % 2 == 0) {
+                sum += a;
+            }
+
+            // Generate the next Fibonacci number
+            long next = a + b;
+            a = b;
+            b = next;
+        }
+
+        return sum;
+    }
+}
