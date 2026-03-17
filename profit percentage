@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        if (sc.hasNextDouble()) {
+            double cp = sc.nextDouble();
+            double sp = sc.nextDouble();
+            
+            // Calculate the profit amount
+            double profit = sp - cp;
+            
+            // Calculate profit percentage
+            // (Profit / Cost Price) * 100
+            double profitPercentage = (profit / cp) * 100;
+            
+            // Format output to 2 decimal places
+            System.out.printf("%.2f\n", profitPercentage);
+        }
+        
+        sc.close();
+    }
+}
