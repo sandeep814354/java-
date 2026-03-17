@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Read the size of the array
+        if (!sc.hasNextInt()) return;
+        int n = sc.nextInt();
+
+        // Initialize and read the array elements
+        int[] a = new int[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+
+        // Sort the array in ascending order
+        Arrays.sort(a);
+
+        // Print the sorted array elements separated by spaces
+        for (int i = 0; i < n; i++) {
+            System.out.print(a[i] + (i == n - 1 ? "" : " "));
+        }
+    }
+}
