@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        if (!sc.hasNextLine()) return;
+        String s = sc.nextLine().toLowerCase();
+
+        boolean[] alphabetPresent = new boolean[26];
+        int uniqueCount = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (ch >= 'a' && ch <= 'z') {
+                int index = ch - 'a';
+                if (!alphabetPresent[index]) {
+                    alphabetPresent[index] = true;
+                    uniqueCount++;
+                }
+            }
+        }
+
+        if (uniqueCount == 26) {
+            System.out.println("True");
+        } else {
+            System.out.println("False");
+        }
+    }
+}
